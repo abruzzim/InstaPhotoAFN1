@@ -22,6 +22,21 @@
 
 #import <Foundation/Foundation.h>
 
+// The following #import line was added as a result of
+// receiving the following pragma warning message:
+// "SystemConfiguration framework not found in project,
+// or not included in precompiled header. Network
+// reachability functionality will not be available."
+#import <SystemConfiguration/SystemConfiguration.h>
+
+// The following #import line was added as a result of
+// receiving the following pragma warning message:
+// "MobileCoreServices framework not found in project,
+// or not included in precompiled header. Automatic
+// MIME type detection when uploading files in multipart
+// requests will not be available."
+#import <MobileCoreServices/MobileCoreServices.h>
+
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 

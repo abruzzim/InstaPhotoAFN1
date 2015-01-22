@@ -1,0 +1,9 @@
+{
+  firstName:  "Mario",
+  lastName: "Abruzzi",
+  city: "New York",
+  profilePhoto: "http://s.gravatar.com/avatar/a2bc40cb59c487b5415d558965ea3fee?s=200",
+  profilePhotoThumbnail: "http://s.gravatar.com/avatar/a2bc40cb59c487b5415d558965ea3fee?s=20",
+  biography: "Bio: Mario Abruzzi is coding along with Gregg Pollack, the founder of Envy Labs and teacher of multiple courses at Code School. Code School teaches web programming in the comfort of my browser with video lessons, coding chalenges and screencasts. Currently he is re-doing this whole course to clean up his directories and version control.",
+  memberSince: "October 1997"
+}

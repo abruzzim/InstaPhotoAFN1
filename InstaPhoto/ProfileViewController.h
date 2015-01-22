@@ -12,5 +12,7 @@
 
 // Add scroll view capability.
 @property (strong, nonatomic) UIScrollView *scrollView;
+// Add NSDictionary property to store JSON data.
+@property (strong, nonatomic) NSDictionary *userProfile;
 
 @end

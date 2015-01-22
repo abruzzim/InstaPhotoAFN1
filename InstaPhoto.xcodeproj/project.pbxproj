@@ -153,7 +153,6 @@
 				AF6133041A5309BA0081CABC /* AppDelegate.h */,
 				AF6133051A5309BA0081CABC /* AppDelegate.m */,
 				AF58A4A71A53A03200ED79E6 /* ProfileViewController.h */,
-				AF315A761A70B31C00DA2E1F /* AFNetworking */,
 				AF58A4A81A53A03200ED79E6 /* ProfileViewController.m */,
 				AF58A4A41A539D3200ED79E6 /* FavoritesViewController.h */,
 				AF58A4A51A539D3200ED79E6 /* FavoritesViewController.m */,
@@ -168,6 +167,7 @@
 				AF61330A1A5309BA0081CABC /* Main.storyboard */,
 				AF61330D1A5309BA0081CABC /* Images.xcassets */,
 				AF61330F1A5309BA0081CABC /* LaunchScreen.xib */,
+				AF315A761A70B31C00DA2E1F /* AFNetworking */,
 				AF6133001A5309BA0081CABC /* Supporting Files */,
 			);
 			path = InstaPhoto;
@@ -437,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = InstaPhoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = InstaPhoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
