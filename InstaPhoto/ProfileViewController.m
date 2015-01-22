@@ -31,25 +31,6 @@
     
     [super viewDidLoad];
     
-    // Custom view controller behavior.
-    self.view.backgroundColor = [UIColor yellowColor];
-    NSLog(@"%%ProfileViewController-I-DEBUG, 'backgroundColor' property set.");
-    
-    /** Setup Scroll View **/
-
-    // Scroll View - class supports displaying content that is
-    // larger than the size of the application's window.
-    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    
-    // Set the integer bit mask that determines how the receiver resizes
-    // itself when its superview's bounds change.
-    self.scrollView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
-    
-    // Set the size of the content view.
-    // The scroll view height is "y" + "height of last view" + "padding"
-    // In this case: 700 + 40 + 100 = 840
-    self.scrollView.contentSize = CGSizeMake(320, 840);
-    
     /** Get Profile JSON data from the Internet **/
     
     // Create the URL object set to the JSON endpoint.
@@ -74,24 +55,37 @@
           // Set the userProfile property to the results of the JSON request.
           self.userProfile = JSON;
           // Call the JSON parse method.
-          [self populateUserProfile];
+          [self buildProfileView];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
           // If the request fails:
           NSLog(@"%%ProfileViewController-E-DEBUG, %@.", error.localizedDescription);
     }];
     
     // Start the request operation.
-    [operation start];
-    
-    /** Adds the scroll view to the end of the receiver’s list of subviews. **/
-    
-    // Add the scrollView as a subview.
-    [self.view addSubview:self.scrollView];
-    
+    [operation start];    
 }
 
-- (void)populateUserProfile {
-    NSLog(@"%%ProfileViewController-I-DEBUG, Start populateUserProfile:.");
+- (void)buildProfileView {
+    NSLog(@"%%ProfileViewController-I-DEBUG, Start buildProfileView:.");
+    
+    // Set background color.
+    self.view.backgroundColor = [UIColor yellowColor];
+    NSLog(@"%%ProfileViewController-I-DEBUG, 'backgroundColor' property set.");
+    
+    /** Setup Scroll View **/
+    
+    // Scroll View - class supports displaying content that is
+    // larger than the size of the application's window.
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    
+    // Set the integer bit mask that determines how the receiver resizes
+    // itself when its superview's bounds change.
+    self.scrollView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+    
+    // Set the size of the content view.
+    // The scroll view height is "y" + "height of last view" + "padding"
+    // In this case: 700 + 40 + 100 = 840
+    self.scrollView.contentSize = CGSizeMake(320, 840);
     
     /** Add Picture from the Internet **/
     
@@ -147,6 +141,11 @@
     memberSinceLbl.frame = CGRectMake(30, 700, 280, 40);
     memberSinceLbl.text = [NSString stringWithFormat:@"Member Since: %@", self.userProfile[@"mbrSince"]];
     [self.scrollView addSubview:memberSinceLbl];
+    
+    /** Adds the scroll view to the end of the receiver’s list of subviews. **/
+    
+    // Add the scrollView as a subview.
+    [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning {
