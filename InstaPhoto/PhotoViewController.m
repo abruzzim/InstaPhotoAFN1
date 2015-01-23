@@ -19,20 +19,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    NSLog(@"%%PhotoViewController-I-DEBUG, Instance method 'viewDidLoad' additional setup.");
+    NSLog(@"%%PhotoVC-I-DEBUG, Inside 'viewDidLoad'.");
 
     self.view.backgroundColor = [UIColor lightGrayColor];
-    NSLog(@"%%PhotoViewController-I-DEBUG, 'backgroundColor' property set.");
+    NSLog(@"%%PhotoVC-I-DEBUG, 'backgroundColor' property set.");
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.imageFileName]];
+    NSURL *imageURL          = [NSURL URLWithString:self.imageUrlString];
+    NSData *imageData        = [NSData dataWithContentsOfURL:imageURL];
+    UIImage *imageMain       = [[UIImage alloc] initWithData:imageData];
+    UIImageView *imageView   = [[UIImageView alloc] initWithImage:imageMain];
     [imageView setContentMode:UIViewContentModeCenter];
-    imageView.frame = CGRectMake((375/2)-(300/2), 40, 300, 300);
+    imageView.frame          = CGRectMake((375/2)-(300/2), 40, 300, 300);
     [self.view addSubview:imageView];
+    NSLog(@"%%PhotoVC-I-DEBUG, Image added to subview.");
     
     UILabel *imageTitleLabel = [[UILabel alloc] init];
-    imageTitleLabel.text = self.imageTitle;
-    imageTitleLabel.frame = CGRectMake((375/2)-(300/2), 350, 300, 40);
+    imageTitleLabel.text     = self.imageTitleString;
+    imageTitleLabel.frame    = CGRectMake((375/2)-(300/2), 350, 300, 40);
     [self.view addSubview:imageTitleLabel];
+    NSLog(@"%%PhotoVC-I-DEBUG, Title added to subview.");
 }
 
 - (void)didReceiveMemoryWarning {

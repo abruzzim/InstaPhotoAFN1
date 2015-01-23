@@ -94,7 +94,7 @@
     
     // Set the frame, which descibes the view's location and size
     // in its superview's coordinate system.
-    profileImageView.frame = CGRectMake(30, 30, 100, 100);
+    profileImageView.frame = CGRectMake(30, 80, 100, 100);
     
     // Get the image from the Internet
     NSString *gravatarURL = @"http://s.gravatar.com/avatar/a2bc40cb59c487b5415d558965ea3fee?s=200";
@@ -110,7 +110,7 @@
     // Initialize and return a newly allocated view object.
     UILabel *nameLbl = [[UILabel alloc] init];
     // Specify the frame rectangle.
-    nameLbl.frame = CGRectMake(30, 150, 280, 40);
+    nameLbl.frame = CGRectMake(30, 200, 280, 40);
     // Set the text property.
     nameLbl.text = [NSString stringWithFormat:@"Name: %@ %@", self.userProfile[@"fName"], self.userProfile[@"lName"]];
     // Add the label as a subview.
@@ -119,14 +119,14 @@
     /** Add City **/
     
     UILabel *cityLbl = [[UILabel alloc] init];
-    cityLbl.frame = CGRectMake(30, 190, 280, 40);
+    cityLbl.frame = CGRectMake(30, 250, 280, 40);
     cityLbl.text = [NSString stringWithFormat:@"City: %@", self.userProfile[@"city"]];
     [self.scrollView addSubview:cityLbl];
     
     /** Add Biography **/
     
     UITextView *bioText = [[UITextView alloc] init];
-    bioText.frame = CGRectMake(30, 280, 150, 400);
+    bioText.frame = CGRectMake(30, 300, 150, 400);
     // Set the text font.
     bioText.font = [UIFont fontWithName:@"Helvetica" size:15];
     // Boolean value indicating that this receiver is not editable.
